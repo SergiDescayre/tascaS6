@@ -9,7 +9,7 @@ const Index = () => {
         <>
         <HeaderPage />
         {
-            presupost.map(press => <Card key={press.id} press={press} setPresupost={setPresupost}/>)
+            presupost.map(press => <Card key={press.id} press={press}/>)
         }
       
         <TotalPrice />

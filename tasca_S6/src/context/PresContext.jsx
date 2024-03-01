@@ -1,49 +1,65 @@
-import { createContext, useState,useContext } from "react";
+import { createContext, useState, useContext } from "react";
+import { infoPresupost } from "../data/variables";
 
-const PresContext = createContext()
+const PresContext = createContext();
 
-const ContextProvider = ({children}) => {
-    const [totalPresupost , setTotalPresupost] = useState(300)
-    const [presupost , setPresupost] = useState([
-        {
-            id:1,
-            title : "SEO",
-            description : "Programació de una web responsive completa",
-            price : 300,
-            check : false,
-            numberPage : 0,
-            numberLanguage : 0,
-            totalPrice : 0
-        },
-        {
-            id:2,
-            title : "ADS",
-            description : "Programació de una web responsive completa",
-            price : 400,
-            check : false,
-            numberPage : 0,
-            numberLanguage : 0,
-            totalPrice : 0
-        },
-        {
-            id:3,
-            title : "WEB",
-            description : "Programació de una web responsive completa",
-            price : 500,
-            check : false,
-            numberPage : 0,
-            numberLanguage : 0,
-            totalPrice : 0
-        },
-    ])
+const ContextProvider = ({ children }) => {
+  const [totalPresupost, setTotalPresupost] = useState(300);
+  const [presupost, setPresupost] = useState(infoPresupost);
 
-    return(
-        <PresContext.Provider value={{presupost,setPresupost,totalPresupost}}>
-            {children}
-        </PresContext.Provider>
+  const handleChecked = (id) => {
+    setPresupost(
+      presupost.map((press) =>
+        press.id === id ? { ...press, check: true } : press
+      )
+    );
+    
+  };
+
+  const addPage = (id) => {
+    setPresupost(
+        presupost.map(press => 
+        press.id===id ? { ...press, numberPage:press.numberPage+1} : press)
     )
-}
+  };
+  const lessPage = (id) => {
+    setPresupost(
+        presupost.map(press => 
+        (press.id===id && press.numberPage !==0) ? { ...press, numberPage:press.numberPage-1} : press)
+    )
+  };
 
-export default ContextProvider
+  const addLanguage = (id) => {
+    setPresupost(
+        presupost.map(press => 
+        press.id===id ? { ...press, numberLanguage:press.numberLanguage+1} : press)
+    )
+  };
 
-export const usePresContext = () => useContext(PresContext)
+  const lessLanguage = (id) => {
+    setPresupost(
+        presupost.map(press => 
+        (press.id===id && press.numberLanguage !==0) ? { ...press, numberLanguage:press.numberLanguage-1} : press)
+    )
+  };
+
+  return (
+    <PresContext.Provider
+      value={{
+        presupost,
+        totalPresupost,
+        handleChecked,
+        addPage,
+        lessPage,
+        addLanguage,
+        lessLanguage,
+      }}
+    >
+      {children}
+    </PresContext.Provider>
+  );
+};
+
+export default ContextProvider;
+
+export const usePresContext = () => useContext(PresContext);

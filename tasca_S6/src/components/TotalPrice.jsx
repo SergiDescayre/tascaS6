@@ -1,4 +1,3 @@
-import React from "react";
 import { usePresContext } from "../context/PresContext";
 
 const TotalPrice = () => {
