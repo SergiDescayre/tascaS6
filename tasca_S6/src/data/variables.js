@@ -7,7 +7,8 @@ export const infoPresupost = [
         check : false,
         numberPage : 0,
         numberLanguage : 0,
-        totalPrice : 0
+        totalPrice : 0,
+        addExtra: 30
     },
     {
         id:2,
@@ -17,7 +18,9 @@ export const infoPresupost = [
         check : false,
         numberPage : 0,
         numberLanguage : 0,
-        totalPrice : 0
+        totalPrice : 0,
+        addExtra: 30
+
     },
     {
         id:3,
@@ -27,6 +30,7 @@ export const infoPresupost = [
         check : false,
         numberPage : 0,
         numberLanguage : 0,
-        totalPrice : 0
+        totalPrice : 0,
+        addExtra: 30
     },
 ]
