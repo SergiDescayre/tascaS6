@@ -1,20 +1,15 @@
 
 import './App.css'
-
-import Index from './pages/Index'
 import Home from "./pages/Home"
-import ContextProvider from './context/PresContext'
+import {Link} from "react-router-dom"
 
 
 function App() {
   return (
-    <ContextProvider>
-   
-
-
-      <Index />
+    <>
       <Home />
-    </ContextProvider>
+      <Link to="/calculadora" className="btn btn-primary">Calculadora</Link>
+    </>
   )
 }
 
