@@ -1,16 +1,11 @@
-import {useState} from "react"
-import { usePresContext } from "../context/PresContext";
 
+import { usePresContext } from "../context/PresContext";
 const NewBudget = () => {
 
-const {presupost} = usePresContext()
-  const [newBudget, setNewBadget] = useState({
-    name: "",
-    phone: "",
-    email: "",
-  });
+const {presupost,newBudget,setNewBadget,butgetPrint , setButgetPrint} = usePresContext()
+  
 
-  const [butgetPrint , setButgetPrint] = useState()
+  
   const handleChange = (e) => {
     setNewBadget({
         ...newBudget,
@@ -26,11 +21,11 @@ const {presupost} = usePresContext()
             pressupost = {
                 ...newBudget, ...press
             }
+            setButgetPrint(pressupost)
         }
         
-        console.log(pressupost)
-        setButgetPrint(pressupost)
-        console.log(butgetPrint)
+        //console.log(pressupost)
+        //console.log(butgetPrint)
     })
    
    
@@ -38,7 +33,9 @@ const {presupost} = usePresContext()
 
   return (
     <div className="container px-5 py-3 mt-5 border rounded-3 shadow w-75">
-      <div className="fw-bold">Demanar pressupost</div>
+      
+      <div className="fw-bold">Demanar pressupost
+      </div>
       <form onSubmit={handleSubmit}>
         <div className="input-group mt-2">
           <input
