@@ -9,7 +9,6 @@ import ContextProvider from './context/PresContext'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
-import Home from './pages/Home.jsx'
 import Index from './pages/Index.jsx'
 
 const router = createBrowserRouter([

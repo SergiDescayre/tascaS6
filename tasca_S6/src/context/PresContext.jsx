@@ -42,7 +42,6 @@ const ContextProvider = ({ children }) => {
   };
 
   const addPage = (id) => {
-    
     setPresupost(
       presupost.map(press =>
         press.id === id ? { ...press, numberPage: press.numberPage + 1, totalPrice: ((press.numberLanguage + press.numberPage)*press.addExtra) + press.price } : press)
@@ -79,6 +78,7 @@ const ContextProvider = ({ children }) => {
         totalPresupost,
         newBudget, 
         listOfBudgets,
+        setTotalPresupost,
         resetInputs, 
         setListOfBudgets,
         setNewBadget,
