@@ -2,3 +2,9 @@
   background-image: url("./assets/fondo_header.jpg");
   background-size: cover;
 }
+
+.container_home{
+  background-image: url("./assets/calculator.jpg");
+  background-size: cover;
+  min-height: 700px;
+}

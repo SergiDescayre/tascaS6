@@ -13,20 +13,17 @@ const {presupost,newBudget,setNewBadget,setListOfBudgets} = usePresContext()
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+    console.log('idList:', uuid.v1());
     presupost.filter(press => {
         let pressupost
         if(press.check){
           
             pressupost = {
-                ...newBudget, ...press
+                ...newBudget, ...press ,idList:uuid.v1()
             }
             setNewBadget(pressupost)
             setListOfBudgets(lists => [...lists,pressupost])   
         }
-    
-        //console.log(pressupost)
-        //console.log(butgetPrint)
     })
    
    

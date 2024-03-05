@@ -1,13 +1,13 @@
 
 import { usePresContext } from "../context/PresContext"
+import {useState} from "react"
 
 const ListOfBudgets = () => {
 
-    const { listOfBudgets,totalPresupost,resetInputs } = usePresContext()
-
-    const handleReset = () => {
-        resetInputs()
-    }
+    const { listOfBudgets,totalPresupost } = usePresContext()
+  
+    
+   
     return (
         <div>
             {
@@ -15,11 +15,11 @@ const ListOfBudgets = () => {
                 && 
                     <h3 className="fw-bold container text-center mt-5">Pressupostos en curs</h3>
             }
-            
+
             {
                 listOfBudgets.map(budget => {
                     return (
-                        <div key={budget.email} className="d-flex justify-content-between flex-wrap container px-5 py-3 mt-5 border rounded-3 shadow w-75">
+                        <div key={budget.idList} className="d-flex justify-content-between flex-wrap container px-5 py-3 mt-5 border rounded-3 shadow w-75">
                             <div className="d-flex flex-column">
                                 <h4>{budget.name}</h4>
                                 <span>{budget.email}</span>
@@ -55,12 +55,7 @@ const ListOfBudgets = () => {
                     )
                 })
             }
-            <div className="container">
-            <button
-            onClick={handleReset} 
-            className="btn btn-primary text-end">Nou pressupost</button>
-
-            </div>
+           
         </div>
 
 
