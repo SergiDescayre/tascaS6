@@ -2,10 +2,8 @@
 import { usePresContext } from "../context/PresContext";
 const NewBudget = () => {
 
-const {presupost,newBudget,setNewBadget,butgetPrint , setButgetPrint} = usePresContext()
-  
+const {presupost,newBudget,setNewBadget,setListOfBudgets} = usePresContext()
 
-  
   const handleChange = (e) => {
     setNewBadget({
         ...newBudget,
@@ -15,15 +13,18 @@ const {presupost,newBudget,setNewBadget,butgetPrint , setButgetPrint} = usePresC
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
     presupost.filter(press => {
         let pressupost
         if(press.check){
+          
             pressupost = {
                 ...newBudget, ...press
             }
-            setButgetPrint(pressupost)
+            setNewBadget(pressupost)
+            setListOfBudgets(lists => [...lists,pressupost])   
         }
-        
+    
         //console.log(pressupost)
         //console.log(butgetPrint)
     })
@@ -67,6 +68,7 @@ const {presupost,newBudget,setNewBadget,butgetPrint , setButgetPrint} = usePresC
             type="submit"
             value={"Sol-licitar pressupost"}
           />
+          
         </div>
       </form>
     </div>

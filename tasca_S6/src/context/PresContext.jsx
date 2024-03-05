@@ -5,18 +5,29 @@ const PresContext = createContext();
 
 const ContextProvider = ({ children }) => {
   const [totalPresupost, setTotalPresupost] = useState(0);
+  const [listOfBudgets, setListOfBudgets] = useState([])
   const [presupost, setPresupost] = useState(infoPresupost);
   const [newBudget, setNewBadget] = useState({
     name: "",
     phone: "",
     email: "",
   });
-  const [butgetPrint , setButgetPrint] = useState()
+
+  const resetInputs = () => {
+    setNewBadget({
+      name: "",
+      phone: "",
+      email: "",
+    })
+  }
+  
   
   const updateTotalPresupost = () => {
-    setTotalPresupost( presupost.reduce((a,b) =>a + b.totalPrice,0))
+    let total =  presupost.reduce((a,b) =>a + b.totalPrice,0)
+    setTotalPresupost(total)
   }
-  console.log(butgetPrint)
+  console.log(newBudget)
+  console.log(listOfBudgets)
 
   useEffect(()=> {
     updateTotalPresupost()
@@ -66,12 +77,16 @@ const ContextProvider = ({ children }) => {
       value={{
         presupost,
         totalPresupost,
-        newBudget, setNewBadget,
+        newBudget, 
+        listOfBudgets,
+        resetInputs, 
+        setListOfBudgets,
+        setNewBadget,
         handleChecked,
         addPage,
         lessPage,
         addLanguage,
-        lessLanguage,butgetPrint , setButgetPrint
+        lessLanguage
       }}
     >
       {children}
