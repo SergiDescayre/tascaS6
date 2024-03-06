@@ -7,12 +7,12 @@ const Card = ({ press, isChecked }) => {
 
   return (
     
-    <div className="container px-5 py-3 mt-5 border rounded-3 shadow w-75">
+    <div className="container px-5 py-3 mt-2 border rounded-3 shadow w-75">
     {
       isChecked && <div className="text-center"><h4 className="text-danger">Estalvia un 20 %</h4></div>
     }
       <div className="container d-flex justify-content-between flex-wrap">
-        <div className="d-flex flex-column">
+        <div className="d-flex flex-column gap-3 py-4">
           <div className="fw-bold">{press.title}</div>
           <div className="mt-2">{press.description}</div>
         </div>

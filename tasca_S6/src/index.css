@@ -1,3 +1,4 @@
+
 .container_header{
   background-image: url("./assets/fondo_header.jpg");
   background-size: cover;
@@ -7,4 +8,15 @@
   background-image: url("./assets/calculator.jpg");
   background-size: cover;
   min-height: 700px;
+}
+
+.hover_span:hover{
+  color:red;
+  
+}
+
+.price{
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: -10px;
 }
