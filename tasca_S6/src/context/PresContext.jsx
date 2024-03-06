@@ -19,18 +19,28 @@ const ContextProvider = ({ children }) => {
       phone: "",
       email: "",
     })
+    setTotalPresupost(0)
+    setPresupost(infoPresupost)
   }
   
-  
+  const updateSubtotal = () => {
+    presupost.map(press => {
+      if(press.check){
+        press.totalPrice = ((press.numberLanguage + press.numberPage)*30) + press.price
+      }
+    })
+  }
+
   const updateTotalPresupost = () => {
     let total =  presupost.reduce((a,b) =>a + b.totalPrice,0)
     setTotalPresupost(total)
   }
-  console.log(newBudget)
-  console.log(listOfBudgets)
 
   useEffect(()=> {
     updateTotalPresupost()
+    updateSubtotal()
+    updateTotalPresupost()
+  
   },[presupost])
 
   const handleChecked = (id) => {
@@ -44,15 +54,14 @@ const ContextProvider = ({ children }) => {
   const addPage = (id) => {
     setPresupost(
       presupost.map(press =>
-        press.id === id ? { ...press, numberPage: press.numberPage + 1, totalPrice: ((press.numberLanguage + press.numberPage)*press.addExtra) + press.price } : press)
-    )
-  
+        press.id === id ? { ...press, numberPage: press.numberPage + 1, } : press)
+    )  
   };
 
   const lessPage = (id) => {
     setPresupost(
       presupost.map(press =>
-        (press.id === id && press.numberPage !== 0) ? { ...press, numberPage: press.numberPage - 1 , totalPrice: ((press.numberLanguage + press.numberPage)*press.addExtra) + press.price } : press)
+        (press.id === id && press.numberPage !== 0) ? { ...press, numberPage: press.numberPage - 1  } : press)
     )
 
   };
@@ -60,14 +69,14 @@ const ContextProvider = ({ children }) => {
   const addLanguage = (id) => {
     setPresupost(
       presupost.map(press =>
-        press.id === id ? { ...press, numberLanguage: press.numberLanguage + 1 , totalPrice: ((press.numberLanguage + press.numberPage)*press.addExtra) + press.price } : press)
+        press.id === id ? { ...press, numberLanguage: press.numberLanguage + 1 } : press)
     )
   };
 
   const lessLanguage = (id) => {
     setPresupost(
       presupost.map(press =>
-        (press.id === id && press.numberLanguage !== 0) ? { ...press, numberLanguage: press.numberLanguage - 1, totalPrice: ((press.numberLanguage + press.numberPage)*press.addExtra) + press.price } : press)
+        (press.id === id && press.numberLanguage !== 0) ? { ...press, numberLanguage: press.numberLanguage - 1} : press)
     )
   };
 

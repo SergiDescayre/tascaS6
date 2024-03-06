@@ -2,7 +2,7 @@
 import { usePresContext } from "../context/PresContext";
 const NewBudget = () => {
 
-const {presupost,newBudget,setNewBadget,setListOfBudgets} = usePresContext()
+const {presupost,newBudget,setNewBadget,setListOfBudgets,resetInputs} = usePresContext()
 
   const handleChange = (e) => {
     setNewBadget({
@@ -13,7 +13,6 @@ const {presupost,newBudget,setNewBadget,setListOfBudgets} = usePresContext()
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('idList:', uuid.v1());
     presupost.filter(press => {
         let pressupost
         if(press.check){
@@ -25,6 +24,7 @@ const {presupost,newBudget,setNewBadget,setListOfBudgets} = usePresContext()
             setListOfBudgets(lists => [...lists,pressupost])   
         }
     })
+    resetInputs()
    
    
   };

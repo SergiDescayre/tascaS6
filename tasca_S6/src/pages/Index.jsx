@@ -6,6 +6,7 @@ import TotalPrice from "../components/TotalPrice"
 import { usePresContext } from "../context/PresContext"
 import { Link } from "react-router-dom"
 import ListOfBudgets from "./ListOfBudgets"
+import torna from "../assets/return.svg"
 
 const Index = () => {
     const { presupost, setPresupost } = usePresContext()
@@ -18,10 +19,12 @@ const Index = () => {
     return (
         <>
             <HeaderPage />
-            <div className="container text-end mt-2">
-                <Link to="/" className="btn btn-primary">Tornar a benvinguda</Link>
+            <div className="container mt-3">
+                <Link to="/" >
+                    <img src={torna}></img>
+                </Link>
             </div>
-            <div className="form-check form-switch d-flex gap-3 justify-content-center">
+            <div className="mb-5 form-check form-switch d-flex gap-3 justify-content-center">
                 <label className="form-check-label me-5" htmlFor="flexSwitchCheckChecked">Pagament anual</label>
                 <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" onChange={handleInput} />
                 <label className="form-check-label" htmlFor="flexSwitchCheckChecked">Pagament mensual</label>
