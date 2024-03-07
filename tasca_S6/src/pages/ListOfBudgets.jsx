@@ -107,7 +107,6 @@ const ListOfBudgets = () => {
                                 <span>Total:</span>
                                 <img onClick={() => hundleRemove(budget.idList)} className="trash_butget ms-4"src={trash} alt="trash" />
                                 </div>
-                                
                                 <h3>{budget.totalPrice} €</h3>
                                 
                             </div>
