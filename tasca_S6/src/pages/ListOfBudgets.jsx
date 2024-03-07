@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import lupa from "../assets/lupa.svg"
 import arrowDown from "../assets/arrow-down.svg"
 import arrowUp from "../assets/arrow_up.svg"
+import trash from "../assets/trash.svg"
 
 const ListOfBudgets = () => {
 
@@ -11,12 +12,6 @@ const ListOfBudgets = () => {
     const [isOrder, setIsOrder] = useState(true)
     const [arrayFound, setArrayFound] = useState(listOfBudgets)
     const [wordToFound, setWordToFound] = useState("")
-
-
-    const hundleOrder = () => {
-        setIsOrder(!isOrder)
-    }
-
     const hundleFound = (e) => {
         setWordToFound(e.target.value)
     }
@@ -28,10 +23,16 @@ const ListOfBudgets = () => {
 
     const ascTotal = () => {
         setArrayFound(arrayFound.sort((a,b) => a.totalPrice - b.totalPrice))
+        setIsOrder(false)
     }
 
     const descTotal = () => {
         setArrayFound(arrayFound.sort((a,b) => b.totalPrice - a.totalPrice))
+        setIsOrder(true)
+    }
+
+    const hundleRemove = (id) => {
+        setArrayFound(arrayFound.filter(budget => budget.idList !== id))
     }
 
     useEffect(() => {
@@ -59,7 +60,7 @@ const ListOfBudgets = () => {
                         <img src={lupa} alt="lupa"></img>
                     </span>
                 </div>
-                <div  onClick={hundleOrder}className="d-flex align-items-center mb-4">
+                <div className="d-flex align-items-center mb-4">
                     <span className="fs-5 me-2">Import</span>
                     {
                         isOrder ? <img  onClick={ascTotal}src={arrowDown}></img>
@@ -102,8 +103,13 @@ const ListOfBudgets = () => {
                                 </div>
                             </div>
                             <div className="d-flex flex-column">
+                                <div>
                                 <span>Total:</span>
+                                <img onClick={() => hundleRemove(budget.idList)} className="trash_butget ms-4"src={trash} alt="trash" />
+                                </div>
+                                
                                 <h3>{budget.totalPrice} €</h3>
+                                
                             </div>
 
                         </div>

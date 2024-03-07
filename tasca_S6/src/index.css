@@ -32,3 +32,8 @@
 .more_info:hover{
   color: blue;
 }
+
+.trash_butget{
+  width: 15px;
+  cursor:pointer;
+}
