@@ -12,6 +12,10 @@ const ListOfBudgets = () => {
     const [isOrder, setIsOrder] = useState(true)
     const [arrayFound, setArrayFound] = useState(listOfBudgets)
     const [wordToFound, setWordToFound] = useState("")
+
+
+   
+
     const hundleFound = (e) => {
         setWordToFound(e.target.value)
     }
@@ -109,6 +113,8 @@ const ListOfBudgets = () => {
                                 </div>
                                 <h3>{budget.totalPrice} €</h3>
                                 
+                                <span>Total:</span>
+                                <h3>{budget.totalPrice} €</h3>
                             </div>
 
                         </div>
