@@ -6,14 +6,17 @@ const Card = ({ press, isChecked }) => {
   const { handleChecked } = usePresContext();
 
   return (
-    
+
     <div className="container px-5 py-3 mt-2 border rounded-3 shadow w-75">
-    {
-      isChecked && <div className="text-center"><h4 className="text-danger">Estalvia un 20 %</h4></div>
-    }
+
       <div className="container d-flex justify-content-between flex-wrap">
         <div className="d-flex flex-column gap-3 py-4">
-          <div className="fw-bold">{press.title}</div>
+          <div className="d-flex align-items-center gap-4">
+            <h4 className="fw-bold">{press.title}</h4>
+            {
+              isChecked && <div className="text-center"><h5 className="text-danger">Estalvia un 20 %</h5></div>
+            }
+          </div>
           <div className="mt-2">{press.description}</div>
         </div>
         <div className="d-flex align-items-center justify-content-center w-25">
@@ -29,8 +32,8 @@ const Card = ({ press, isChecked }) => {
           />
         </div>
       </div>
-      {press.check && 
-      <PagesAndLanguages  press={press}/>
+      {press.check &&
+        <PagesAndLanguages press={press} />
       }
     </div>
   );
