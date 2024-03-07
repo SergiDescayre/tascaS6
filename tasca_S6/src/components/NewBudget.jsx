@@ -61,7 +61,7 @@ const {presupost,newBudget,setNewBadget,setListOfBudgets,resetInputs} = usePresC
             onChange={handleChange}
           />
           <input
-            className="btn btn-success"
+            className="btn btn-outline-primary"
             type="submit"
             value={"Sol-licitar pressupost"}
           />

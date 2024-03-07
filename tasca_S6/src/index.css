@@ -20,3 +20,15 @@
   font-weight: bold;
   margin-top: -10px;
 }
+
+.more_info{
+  font-size: 0.7rem;
+  color:grey;
+  margin-right: 8px;
+  text-decoration: underline;
+  cursor:pointer;
+}
+
+.more_info:hover{
+  color: blue;
+}
