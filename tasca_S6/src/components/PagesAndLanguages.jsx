@@ -24,7 +24,7 @@ const PagesAndLanguages = ({ press }) => {
     <>
       <div className="d-flex justify-content-end gap-2 flex-wrap align-items-center mt-2">
         <div>
-          <span onClick={hundlePages} className="more_info" data-bs-toggle="modal" data-bs-target="#pagines">Més info</span>
+          <span onClick={hundlePages} className="more_info text-primary" data-bs-toggle="modal" data-bs-target="#pagines">Més info</span>
           <span type="button" >Pàgines</span>
         </div>
         <img onClick={() => lessPage(press.id)} src={minus}></img>
@@ -34,7 +34,7 @@ const PagesAndLanguages = ({ press }) => {
       <div className="d-flex justify-content-end gap-2 flex-wrap align-items-center mt-2">
         <div>
     
-        <span onClick={hundleLanguages} className="more_info" data-bs-toggle="modal" data-bs-target="#pagines">Més info</span>
+        <span onClick={hundleLanguages} className="more_info text-primary" data-bs-toggle="modal" data-bs-target="#pagines">Més info</span>
         <span  data-bs-toggle="modal" data-bs-target="#pagines">Llenguatges</span>
         </div>
        

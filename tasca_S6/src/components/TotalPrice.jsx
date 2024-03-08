@@ -4,8 +4,6 @@ import { useEffect, useState } from "react";
 const TotalPrice = () => {
   const {totalPresupost,resetInputs,isChecked} = usePresContext()
   const [total ,setTotal] = useState(totalPresupost)
-  console.log(isChecked)
-
   const updateTotalPresupost = () => {
     if(isChecked){
       setTotal(totalPresupost-totalPresupost*20/100)

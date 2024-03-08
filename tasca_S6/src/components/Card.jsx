@@ -14,7 +14,7 @@ const Card = ({ press, isChecked }) => {
           <div className="d-flex align-items-center gap-4">
             <h4 className="fw-bold">{press.title}</h4>
             {
-              isChecked && <div className="text-center"><h5 className="text-danger">Estalvia un 20 %</h5></div>
+              isChecked && <div className="text-center"><h5 className="text-primary">Estalvia un 20 %</h5></div>
             }
           </div>
           <div className="mt-2">{press.description}</div>
@@ -23,7 +23,7 @@ const Card = ({ press, isChecked }) => {
            {
             isChecked ? 
             <div>
-              <span className="fs-5 text-danger me-3">{press.price - (press.price * 20)/100}</span> 
+              <span className="fs-5 text-primary me-3">{press.price - (press.price * 20)/100}</span> 
               <span className="fs-5 text-decoration-line-through">{press.price} €</span>
             </div>
             : <span className="fs-5">{press.price} €</span> 

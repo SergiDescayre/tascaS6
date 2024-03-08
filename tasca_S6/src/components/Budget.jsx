@@ -7,8 +7,6 @@ const Budget = ({ budget, hundleRemove }) => {
 
 const { isChecked } = usePresContext();
 
-
-console.log(isChecked)
   return (
     <div className="d-flex justify-content-between flex-wrap container px-5 py-3 my-2 border rounded-3 shadow w-75">
       <div className="d-flex flex-column w-25">

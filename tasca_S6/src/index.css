@@ -1,7 +1,8 @@
 
 .container_header{
-  background-image: url("./assets/fondo_header.jpg");
+  background-image: url("./assets/calculator.jpg");
   background-size: cover;
+  background-position: center;
 }
 
 .container_home{
