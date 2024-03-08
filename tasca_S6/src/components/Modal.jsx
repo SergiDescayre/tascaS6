@@ -1,5 +1,20 @@
+import { useEffect, useState } from "react"
+import { usePresContext } from "../context/PresContext"
+
 
 const Modal = ({infoSingular , infoPlural}) => {
+  const {isChecked} = usePresContext()
+  const [totalExtras , setTotalExtras] = useState("0")
+
+  const updatePriceExtras = () => {
+    isChecked ? setTotalExtras('24')
+    :setTotalExtras('30')
+  }
+  
+  useEffect(()=> {
+    updatePriceExtras()
+  })
+
   return (
     <div className="modal fade" id="pagines" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div className="modal-dialog">
@@ -10,7 +25,7 @@ const Modal = ({infoSingular , infoPlural}) => {
       </div>
       <div className="modal-body text-center p-5">
         Afageix els {infoPlural} que tindrà el teu projecte.
-        El cost de cada {infoSingular} es de 30€
+        El cost de cada {infoSingular} es de {totalExtras}
       </div>
     </div>
   </div>

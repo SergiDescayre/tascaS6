@@ -5,6 +5,7 @@ const PresContext = createContext();
 
 const ContextProvider = ({ children }) => {
   const [totalPresupost, setTotalPresupost] = useState(0);
+  const [isChecked , setIsChecked] = useState(false)
   const [listOfBudgets, setListOfBudgets] = useState([])
   const [presupost, setPresupost] = useState(infoPresupost);
   const [newBudget, setNewBadget] = useState({
@@ -87,6 +88,8 @@ const ContextProvider = ({ children }) => {
         totalPresupost,
         newBudget, 
         listOfBudgets,
+        isChecked , 
+        setIsChecked,
         setTotalPresupost,
         resetInputs, 
         setListOfBudgets,

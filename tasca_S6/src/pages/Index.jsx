@@ -9,8 +9,8 @@ import ListOfBudgets from "./ListOfBudgets"
 import torna from "../assets/return.svg"
 
 const Index = () => {
-    const { presupost, setPresupost } = usePresContext()
-    const [isChecked , setIsChecked] = useState(false)
+    const { presupost,isChecked , setIsChecked  } = usePresContext()
+   
 
     const handleInput = (e) => {
         setIsChecked(e.target.checked)
