@@ -55,7 +55,7 @@ const {presupost,newBudget,setNewBadget,setListOfBudgets,resetInputs} = usePresC
           <input
             name="email"
             className="form-control"
-            type="mail"
+            type="email"
             placeholder="Email"
             value={newBudget.email}
             onChange={handleChange}
