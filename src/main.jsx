@@ -9,12 +9,12 @@ import ContextProvider from './context/PresContext'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
-import Index from './pages/Index.jsx'
+import Calculadora from "./pages/Calculadora.jsx"
 import BudgetDetail from './components/BudgetDetail.jsx'
 
 const router = createBrowserRouter([
   {path: "/" ,element: <App />},
-  {path: "/calculadora" , element: <Index />},
+  {path: "/calculadora" , element: <Calculadora />},
   {path: "/calculadora/:id", element: <BudgetDetail />} 
 ])
 

@@ -1,6 +1,6 @@
 import { usePresContext } from "../context/PresContext";
 import { useState, useEffect } from "react";
-import Budget from "../components/Budget";
+import Budget from "./Budget";
 import lupa from "../assets/lupa.svg";
 import arrowDown from "../assets/arrow-down.svg";
 import arrowUp from "../assets/arrow_up.svg";
